@@ -1019,11 +1019,12 @@ void GCS_MAVLINK_Copter::handleMessage(const mavlink_message_t &msg)
                 if (!AP::ahrs().home_is_set()) {
                     break;
                 }
-                Location origin;
-                pos_vector.z += AP::ahrs().get_home().alt;
-                if (copter.ahrs.get_origin(origin)) {
-                    pos_vector.z -= origin.alt;
-                }
+                // Transformation no longer needed as given local pose is already in origin
+                //Location origin;
+                //pos_vector.z += AP::ahrs().get_home().alt;
+                //if (copter.ahrs.get_origin(origin)) {
+                //    pos_vector.z -= origin.alt;
+                //}
             }
         }
 
