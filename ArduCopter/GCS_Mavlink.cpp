@@ -1292,7 +1292,7 @@ void GCS_MAVLINK_Copter::handleMessage(mavlink_message_t* msg)
                 pos_vector += copter.inertial_nav.get_position();
             } else {
                 // convert from alt-above-home to alt-above-ekf-origin
-                pos_vector.z = copter.pv_alt_above_origin(pos_vector.z);
+                //pos_vector.z = copter.pv_alt_above_origin(pos_vector.z);
             }
         }
 
